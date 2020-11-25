@@ -62,11 +62,12 @@ public class toDoneProvider {
 
     public toDone mapFromDTO(toDoneDTO indeb){
         toDone in = new toDone();
-        in.setDescription(indeb.getDescription());
-        if(indeb.getDateTask().isEmpty()){
+        if(indeb.getDateTask() == null){
+            in.setDescription(indeb.getDescription());
             Date date = new Date();
             in.setDateTask(date.getTime());
         }else{
+            in.setDescription(indeb.getDescription());
             long dateAux = Long.parseLong(indeb.getDateTask());
             Date date = new Date(dateAux);
             in.setDateTask(date.getTime());
