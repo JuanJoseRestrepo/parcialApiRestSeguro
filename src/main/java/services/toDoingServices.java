@@ -18,6 +18,8 @@ public class toDoingServices {
     public Response createToDoing(toDoingDTO todo){
 
         toDoingProvider provider = new toDoingProvider();
+        System.out.println(todo.getDescription() + "brrrrr");
+        System.out.println(todo.getDateTask() + "brrr");
         provider.createToDoing(provider.mapFromDTO(todo));
         return new Response("operacion exitosa");
 

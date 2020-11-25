@@ -62,11 +62,19 @@
 
 }
 
+.downCon{
+    display: flex;
+    float: right;
+    justify-content: space-between;
+}
+
 .header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
+
 .toDoComponent{
     background-color: whitesmoke;
 }
@@ -82,6 +90,7 @@
     margin: 0 auto;
     justify-content:center;
 }
+
 
 #registroTittle{
     color: burlywood;

@@ -9,6 +9,7 @@ import model.dto.toDoingDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -63,16 +64,23 @@ public class toDoingProvider {
 
     public toDoing mapFromDTO(toDoingDTO indeb){
         toDoing in = new toDoing();
+        try{
 
-        if(indeb.getDateTask() == null){
-            in.setDescription(indeb.getDescription());
-            Date date = new Date();
-            in.setDateTask(date.getTime());
-        }else{
-            in.setDescription(indeb.getDescription());
-            long dateAux = Long.parseLong(indeb.getDateTask());
-            Date date = new Date(dateAux);
-            in.setDateTask(date.getTime());
+            if(indeb.getDateTask() == null){
+                in.setDescription(indeb.getDescription());
+                Date date = new Date();
+                in.setDateTask(date.getTime());
+            }else{
+                in.setDescription(indeb.getDescription());
+                String msj = indeb.getDateTask();
+                SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+                Date d = (Date)f.parse(msj);
+                long milliseconds = d.getTime();
+                in.setDateTask(milliseconds);
+            }
+
+        }catch(ParseException e){
+            e.printStackTrace();
         }
         return in;
     }

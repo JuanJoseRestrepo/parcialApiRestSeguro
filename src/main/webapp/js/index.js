@@ -1,6 +1,7 @@
 const description = document.getElementById('description');
 const regis = document.getElementById('regis');
 const todoContainer = document.getElementById('todoContainer');
+const todoingContainer = document.getElementById('todoingContainer');
 
 const registrar = () =>{
 
@@ -46,6 +47,13 @@ const getAllTodo = () =>{
                 view.onDeleteFinish = () =>{
                     todoContainer.removeChild(document.getElementById('toDo'+toDoDTO.id));
                 };
+
+                view.onDeleteAndUpdate = () =>{
+                    todoContainer.removeChild(document.getElementById('toDo'+toDoDTO.id));
+                    getAllTodo();
+                    getAllToDoing();
+                };
+
                 todoContainer.appendChild(view.render()); 
             }
 
@@ -58,5 +66,10 @@ const getAllTodo = () =>{
     xhr.send();
 
     };
+
+    const getAllToDoing = () =>{
+
+    };
+
 
     getAllTodo();

@@ -7,6 +7,7 @@ import model.dto.toDoDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -63,15 +64,23 @@ public class toDoProvider {
         System.out.println("Holaaaaaaaaaa");
         System.out.println(indeb.getId() + "asda" + indeb.getDescription());
         System.out.println(indeb.getDateTask());
-        if(indeb.getDateTask() == null){
-            in.setDescription(indeb.getDescription());
-            Date date = new Date();
-            in.setDateTask(date.getTime());
-        }else{
-            in.setDescription(indeb.getDescription());
-            long dateAux = Long.parseLong(indeb.getDateTask());
-            Date date = new Date(dateAux);
-            in.setDateTask(date.getTime());
+        try{
+
+            if(indeb.getDateTask() == null){
+                in.setDescription(indeb.getDescription());
+                Date date = new Date();
+                in.setDateTask(date.getTime());
+            }else{
+                in.setDescription(indeb.getDescription());
+                String msj = indeb.getDateTask();
+                SimpleDateFormat f = new SimpleDateFormat("dd-MM-yyyy");
+                Date d = (Date)f.parse(msj);
+                long milliseconds = d.getTime();
+                in.setDateTask(milliseconds);
+            }
+
+        }catch(ParseException e){
+            e.printStackTrace();
         }
 
         return in;
