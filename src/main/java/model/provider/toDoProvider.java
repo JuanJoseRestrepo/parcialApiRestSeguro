@@ -62,8 +62,7 @@ public class toDoProvider {
     public toDo mapFromDTO(toDoDTO indeb){
         toDo in = new toDo();
         System.out.println("Holaaaaaaaaaa");
-        System.out.println(indeb.getId() + "asda" + indeb.getDescription());
-        System.out.println(indeb.getDateTask());
+        System.out.println(indeb.getDateTask() + "  " + "Esta es la fecha");
         try{
 
             if(indeb.getDateTask() == null){
