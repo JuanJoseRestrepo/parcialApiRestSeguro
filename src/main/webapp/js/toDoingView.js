@@ -147,6 +147,7 @@ class toDoingView{
     }
 
     render = () =>{
+        
         let downContainer = document.createElement('div');
         downContainer.className = 'downCon1';
         let headerContainer = document.createElement('div');
@@ -160,9 +161,11 @@ class toDoingView{
         let delBtn = document.createElement('button');
         let updateBtn = document.createElement('button');
         let update2Btn = document.createElement('button');
-  
+
+
         update2Btn.innerHTML = 'A';
         updateBtn.innerHTML = 'O';
+        update2Btn.className = 'ABtn';
         updateBtn.className = 'upBtn';
         delBtn.innerHTML = 'X';
         delBtn.className = 'delBtn';
@@ -176,10 +179,8 @@ class toDoingView{
         downContainer.appendChild(update2Btn);
         downContainer.appendChild(updateBtn);
         component.appendChild(headerContainer);
-        component.appendChild(downContainer);
         component.appendChild(description);
-        component.appendChild(updateBtn);
-     
+        component.appendChild(downContainer);
   
         delBtn.addEventListener('click', this.deleteToDoingTask);
         update2Btn.addEventListener('click',this.deleteAndUpdateToDo);

@@ -10,6 +10,12 @@
     border-radius: 20px;
 }
 
+#TituloGlobal{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+};
+
 .descriptionName{
     background: lightblue;
     color: whitesmoke;
@@ -17,16 +23,15 @@
     margin: 10px auto;
     width: 400px;
     position: relative;
-}
+};
 
 #globalContainer{
-    
     flex-direction: row;
     padding: 20px;
+    align-items: center;
     margin: 10px auto;
-    width: 400px;
-    position: relative;
- }
+    max-width: 390px;
+ };
 
 #todoContainer{
     display: flex;
@@ -34,7 +39,7 @@
     padding: 20px;
     margin: 10px auto;
     width: 400px;
-    position: relative;
+    
 }
 
 #todoingContainer{
@@ -43,7 +48,7 @@
     padding: 20px;
     margin: 10px auto;
     width: 400px;
-    position: relative;
+  
 
 }
 
@@ -53,7 +58,7 @@
     padding: 20px;
     margin: 10px auto;
     width: 400px;
-    position: relative;
+   
 }
 
 #registroContainer input{
@@ -71,13 +76,13 @@
 
 #registroContainer *{
 
-    margin: 5px 5px 5px 5px
+    margin: 5px 5px 5px 5px;
 
 }
 
 .downCon{
     display: flex;
-    float: right;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -89,14 +94,33 @@
 
 .downCon1{
     display: flex;
-    float: right;
+    flex-direction: row;
     justify-content: space-between;
 }
 
 .toDoComponent{
+    
     background-color: whitesmoke;
+    margin: 5px;
 }
 
+.upBtn{
+    background-color: blue;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.ABtn{
+    background-color: yellow;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.delBtn{
+    background-color: red;
+    border-radius: 100%;
+    cursor: pointer;
+}
 
 .TitleColor{
     font-weight: bolder;
@@ -113,4 +137,11 @@
 
 #registroTittle{
     color: burlywood;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Titulos{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    
 }

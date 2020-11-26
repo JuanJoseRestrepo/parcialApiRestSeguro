@@ -124,10 +124,8 @@ class toDoneView{
         headerContainer.appendChild(delBtn);
         downContainer.appendChild(updateBtn);
         component.appendChild(headerContainer);
-        component.appendChild(downContainer);
         component.appendChild(description);
-        component.appendChild(updateBtn);
-     
+        component.appendChild(downContainer);
         
         delBtn.addEventListener('click', this.deleteToDone);
         updateBtn.addEventListener('click', this.deleteAndUpdateToDone); 

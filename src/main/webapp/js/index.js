@@ -27,7 +27,7 @@ const registrar = () =>{
     xhr.open('POST',' http://localhost:8080/parcialApiRestSeguro/api/toDo/create ');
     xhr.setRequestHeader('Content-Type','application/json');
     xhr.send(JSON.stringify(obj));
-
+  
 };
 
 regis.addEventListener('click',registrar);
@@ -67,7 +67,7 @@ const getAllTodo = () =>{
 
     xhr.open('GET','http://localhost:8080/parcialApiRestSeguro/api/toDo/all');
     xhr.send();
-
+ 
     };
 
     getAllTodo();
@@ -118,6 +118,7 @@ const getAllTodo = () =>{
         
         xhr.open('GET','http://localhost:8080/parcialApiRestSeguro/api/toDoing/all');
         xhr.send();
+      
     };
     getAllToDoing();
 
